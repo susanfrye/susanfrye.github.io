@@ -1,0 +1,196 @@
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f9fbe7;
+  color: #2e2e2e;
+  min-height: 100vh;
+}
+
+/* ── Header ── */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 48px;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid #c8e6c9;
+}
+
+.header-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2e7d32;
+  letter-spacing: 0.5px;
+}
+
+nav { display: flex; gap: 32px; }
+
+.nav-link {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: #4a4a4a;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  transition: color 0.2s;
+}
+.nav-link:hover { color: #2e7d32; }
+
+/* ── Hero Text ── */
+.hero-text {
+  text-align: center;
+  padding: 52px 20px 8px;
+}
+
+.hero-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  color: #1b5e20;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.hero-text .italic { font-style: italic; color: #388e3c; }
+
+.hero-text p {
+  font-size: 1rem;
+  color: #888;
+  letter-spacing: 1px;
+}
+
+/* ── Forest Scene ── */
+#scene {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10px 20px 0;
+}
+
+#forest-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Clickable items */
+.scene-item {
+  cursor: pointer;
+  transition: transform 0.25s ease;
+  transform-origin: center bottom;
+}
+
+.scene-item:hover {
+  transform: scale(1.06) translateY(-4px);
+}
+
+.scene-item:focus { outline: none; }
+.scene-item:focus-visible ellipse,
+.scene-item:focus-visible rect {
+  filter: brightness(1.15);
+}
+
+.hover-area { cursor: pointer; }
+
+/* Scene labels */
+.scene-label {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  fill: #1b5e20;
+  text-anchor: middle;
+  font-style: italic;
+  pointer-events: none;
+}
+
+.hint {
+  text-align: center;
+  font-size: 0.82rem;
+  color: #aaa;
+  margin-top: -4px;
+  padding-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+/* ── About Strip ── */
+.about-strip {
+  background: #fff;
+  border-top: 2px solid #c8e6c9;
+  border-bottom: 2px solid #c8e6c9;
+  margin-top: 20px;
+  padding: 52px 20px;
+}
+
+.about-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.about-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #1b5e20;
+  margin-bottom: 16px;
+}
+
+.about-text p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #444;
+  margin-bottom: 24px;
+}
+
+.btn-green {
+  display: inline-block;
+  background: #2e7d32;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+.btn-green:hover { background: #1b5e20; }
+
+.about-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.about-tags span {
+  background: #f1f8e9;
+  border: 1px solid #c8e6c9;
+  color: #2e7d32;
+  border-radius: 24px;
+  padding: 8px 18px;
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+/* ── Footer ── */
+footer {
+  text-align: center;
+  padding: 32px 20px;
+  font-size: 0.85rem;
+  color: #999;
+}
+
+footer a { color: #2e7d32; text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+/* ── Responsive ── */
+@media (max-width: 700px) {
+  header { padding: 14px 20px; }
+  nav { gap: 16px; }
+  .about-inner { grid-template-columns: 1fr; gap: 28px; }
+}

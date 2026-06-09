@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Susan Frye — Conservation Scientist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- ── Header ── -->
+  <header>
+    <div class="header-name">Susan Frye</div>
+    <nav>
+      <a href="#scene" class="nav-link">Home</a>
+      <a href="research.html" class="nav-link">Research</a>
+      <a href="cv.html" class="nav-link">CV</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ── Hero text ── -->
+  <section class="hero-text">
+    <h1>Conservation Scientist<br/><span class="italic">& Ecological Data Analyst</span></h1>
+    <p>Click something to explore →</p>
+  </section>
+
+  <!-- ── Interactive Forest Scene ── -->
+  <section id="scene">
+    <svg id="forest-svg" viewBox="0 0 1000 480" xmlns="http://www.w3.org/2000/svg">
+
+      <!-- Sky gradient -->
+      <defs>
+        <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#c8e6c9"/>
+          <stop offset="100%" stop-color="#f1f8e9"/>
+        </linearGradient>
+        <linearGradient id="groundGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#8d6e63"/>
+          <stop offset="100%" stop-color="#6d4c41"/>
+        </linearGradient>
+        <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="2" dy="4" stdDeviation="4" flood-opacity="0.2"/>
+        </filter>
+      </defs>
+
+      <!-- Sky -->
+      <rect width="1000" height="480" fill="url(#skyGrad)"/>
+
+      <!-- Ground -->
+      <ellipse cx="500" cy="460" rx="560" ry="60" fill="#a5d6a7" opacity="0.5"/>
+      <rect x="0" y="430" width="1000" height="60" fill="url(#groundGrad)" opacity="0.3"/>
+
+      <!-- ── Sun ── -->
+      <circle cx="880" cy="80" r="45" fill="#fff9c4" opacity="0.9"/>
+      <circle cx="880" cy="80" r="38" fill="#fff176"/>
+
+      <!-- ── Clouds ── -->
+      <g opacity="0.7">
+        <ellipse cx="150" cy="90" rx="70" ry="28" fill="white"/>
+        <ellipse cx="190" cy="78" rx="50" ry="24" fill="white"/>
+        <ellipse cx="120" cy="82" rx="40" ry="20" fill="white"/>
+      </g>
+      <g opacity="0.6">
+        <ellipse cx="620" cy="65" rx="55" ry="22" fill="white"/>
+        <ellipse cx="655" cy="55" rx="40" ry="18" fill="white"/>
+        <ellipse cx="595" cy="60" rx="35" ry="16" fill="white"/>
+      </g>
+
+      <!-- ════════════════════════════════════════
+           CLICKABLE ELEMENT 1: Big Oak Tree → Research
+           ════════════════════════════════════════ -->
+      <g class="scene-item" id="tree-research" onclick="goTo('research.html')" tabindex="0" role="link" aria-label="Research">
+        <!-- Trunk -->
+        <rect x="178" y="290" width="44" height="140" rx="8" fill="#6d4c41"/>
+        <rect x="185" y="330" width="10" height="60" rx="4" fill="#5d4037" opacity="0.5"/>
+        <!-- Canopy layers -->
+        <ellipse cx="200" cy="280" rx="90" ry="75" fill="#2e7d32"/>
+        <ellipse cx="200" cy="240" rx="72" ry="65" fill="#388e3c"/>
+        <ellipse cx="200" cy="205" rx="52" ry="50" fill="#43a047"/>
+        <ellipse cx="200" cy="178" rx="34" ry="34" fill="#4caf50"/>
+        <!-- Label -->
+        <text x="200" y="450" class="scene-label">Research</text>
+        <!-- Hover ring -->
+        <ellipse cx="200" cy="300" rx="95" ry="160" fill="transparent" class="hover-area"/>
+      </g>
+
+      <!-- ════════════════════════════════════════
+           CLICKABLE ELEMENT 2: Bee + Hive → Shiny App
+           ════════════════════════════════════════ -->
+      <g class="scene-item" id="bee-shiny" onclick="goTo('https://susanmfrye.shinyapps.io/shiny_app/')" tabindex="0" role="link" aria-label="Shiny App">
+        <!-- Hive on branch stub -->
+        <rect x="430" y="310" width="18" height="80" rx="5" fill="#8d6e63"/>
+        <!-- Hive body -->
+        <ellipse cx="490" cy="295" rx="38" ry="28" fill="#f9a825"/>
+        <ellipse cx="490" cy="285" rx="30" ry="22" fill="#fbc02d"/>
+        <ellipse cx="490" cy="275" rx="20" ry="15" fill="#f9a825"/>
+        <!-- Hive stripes -->
+        <line x1="455" y1="295" x2="525" y2="295" stroke="#e65100" stroke-width="2" opacity="0.4"/>
+        <line x1="460" y1="285" x2="520" y2="285" stroke="#e65100" stroke-width="2" opacity="0.4"/>
+        <!-- Bee body -->
+        <ellipse cx="535" cy="240" rx="16" ry="10" fill="#fdd835"/>
+        <line x1="522" y1="236" x2="548" y2="236" stroke="#333" stroke-width="2"/>
+        <line x1="522" y1="242" x2="548" y2="242" stroke="#333" stroke-width="2"/>
+        <!-- Bee wings -->
+        <ellipse cx="528" cy="230" rx="14" ry="7" fill="white" opacity="0.8" transform="rotate(-20 528 230)"/>
+        <ellipse cx="542" cy="230" rx="14" ry="7" fill="white" opacity="0.8" transform="rotate(20 542 230)"/>
+        <!-- Label -->
+        <text x="490" y="345" class="scene-label">Data Explorer</text>
+        <ellipse cx="490" cy="300" rx="70" ry="80" fill="transparent" class="hover-area"/>
+      </g>
+
+      <!-- ════════════════════════════════════════
+           CLICKABLE ELEMENT 3: Field Notebook → CV
+           ════════════════════════════════════════ -->
+      <g class="scene-item" id="notebook-cv" onclick="goTo('cv.html')" tabindex="0" role="link" aria-label="CV">
+        <!-- Notebook -->
+        <rect x="650" y="350" width="70" height="88" rx="4" fill="#1565c0" filter="url(#shadow)"/>
+        <rect x="656" y="350" width="8" height="88" rx="2" fill="#0d47a1"/>
+        <!-- Pages -->
+        <rect x="664" y="358" width="48" height="72" rx="2" fill="#e3f2fd"/>
+        <!-- Lines on page -->
+        <line x1="670" y1="372" x2="706" y2="372" stroke="#90caf9" stroke-width="2"/>
+        <line x1="670" y1="382" x2="706" y2="382" stroke="#90caf9" stroke-width="2"/>
+        <line x1="670" y1="392" x2="706" y2="392" stroke="#90caf9" stroke-width="2"/>
+        <line x1="670" y1="402" x2="706" y2="402" stroke="#90caf9" stroke-width="2"/>
+        <line x1="670" y1="412" x2="700" y2="412" stroke="#90caf9" stroke-width="2"/>
+        <!-- Pencil -->
+        <rect x="726" y="345" width="8" height="55" rx="3" fill="#fdd835" transform="rotate(15 726 345)"/>
+        <polygon points="726,400 734,400 730,412" fill="#f48fb1" transform="rotate(15 726 345)"/>
+        <!-- Label -->
+        <text x="685" y="455" class="scene-label">CV</text>
+        <rect x="645" y="340" width="110" height="110" rx="8" fill="transparent" class="hover-area"/>
+      </g>
+
+      <!-- ════════════════════════════════════════
+           CLICKABLE ELEMENT 4: Trail Sign → Contact
+           ════════════════════════════════════════ -->
+      <g class="scene-item" id="sign-contact" onclick="goTo('contact.html')" tabindex="0" role="link" aria-label="Contact">
+        <!-- Post -->
+        <rect x="846" y="330" width="10" height="110" rx="3" fill="#8d6e63"/>
+        <!-- Sign board -->
+        <rect x="810" y="310" width="90" height="40" rx="5" fill="#5d4037" filter="url(#shadow)"/>
+        <polygon points="900,310 900,350 910,330" fill="#5d4037"/>
+        <!-- Sign text -->
+        <text x="851" y="336" text-anchor="middle" font-family="Inter" font-size="13" fill="#fff9c4" font-weight="500">Get in</text>
+        <text x="851" y="350" text-anchor="middle" font-family="Inter" font-size="13" fill="#fff9c4" font-weight="500">Touch</text>
+        <!-- Label -->
+        <text x="851" y="455" class="scene-label">Contact</text>
+        <rect x="805" y="300" width="115" height="145" rx="8" fill="transparent" class="hover-area"/>
+      </g>
+
+      <!-- ── Background trees (decorative) ── -->
+      <g opacity="0.4">
+        <rect x="75" y="360" width="16" height="70" rx="4" fill="#795548"/>
+        <ellipse cx="83" cy="345" rx="30" ry="28" fill="#388e3c"/>
+        <ellipse cx="83" cy="325" rx="22" ry="22" fill="#43a047"/>
+      </g>
+      <g opacity="0.35">
+        <rect x="930" y="370" width="14" height="60" rx="4" fill="#795548"/>
+        <ellipse cx="937" cy="358" rx="28" ry="25" fill="#2e7d32"/>
+        <ellipse cx="937" cy="340" rx="20" ry="20" fill="#388e3c"/>
+      </g>
+      <g opacity="0.3">
+        <rect x="355" y="380" width="12" height="50" rx="3" fill="#795548"/>
+        <ellipse cx="361" cy="370" rx="24" ry="22" fill="#43a047"/>
+      </g>
+
+      <!-- ── Birds ── -->
+      <g fill="none" stroke="#555" stroke-width="1.5" opacity="0.6">
+        <path d="M320 120 Q325 115 330 120"/>
+        <path d="M335 112 Q340 107 345 112"/>
+        <path d="M310 135 Q316 129 322 135"/>
+      </g>
+
+      <!-- ── Tooltip ── -->
+      <g id="tooltip" opacity="0" pointer-events="none">
+        <rect id="tooltip-bg" rx="8" fill="#1b5e20" opacity="0.92"/>
+        <text id="tooltip-text" fill="white" font-family="Inter" font-size="14" font-weight="500"/>
+      </g>
+
+    </svg>
+
+    <!-- Floating label hint -->
+    <div class="hint">Hover over elements to explore</div>
+  </section>
+
+  <!-- ── About strip ── -->
+  <section class="about-strip">
+    <div class="about-inner">
+      <div class="about-text">
+        <h2>Hi, I'm Susan</h2>
+        <p>Conservation scientist and PhD (Forestry, University of Toronto) with 10+ years of experience in biodiversity monitoring, spatial data analysis, and ecological research across Ontario. I specialize in translating complex field and geospatial data into actionable insights using R, QGIS, and interactive data tools.</p>
+        <a href="research.html" class="btn-green">See my research →</a>
+      </div>
+      <div class="about-tags">
+        <span>🐝 Native Bee Ecology</span>
+        <span>🗺️ Spatial Analysis</span>
+        <span>📊 R / R Shiny</span>
+        <span>🌳 Forest Ecology</span>
+        <span>🔬 Biodiversity Monitoring</span>
+        <span>📍 Ontario, Canada</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Susan Frye · <a href="mailto:sma.frye@gmail.com">sma.frye@gmail.com</a> · <a href="https://linkedin.com/in/susanmfrye" target="_blank">LinkedIn</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
