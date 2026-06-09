@@ -115,6 +115,25 @@ nav { display: flex; gap: 32px; }
 }
 .tooltip.hidden { opacity: 0; }
 
+/* Slow bee flying/hover animation */
+@keyframes bee-float {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  25%  { transform: translate(1.5px, -3px) rotate(1deg); }
+  50%  { transform: translate(-1px, -1px) rotate(-1deg); }
+  75%  { transform: translate(-2px, -4px) rotate(0.5deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+#bee-left, #bee-center, #bee-right {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: bee-float 6s ease-in-out infinite;
+}
+
+#bee-left   { animation-duration: 7s; animation-delay: 0s; }
+#bee-center { animation-duration: 6s; animation-delay: -2s; }
+#bee-right  { animation-duration: 6.5s; animation-delay: -4s; }
+
 .hint {
   text-align: center;
   font-size: 0.82rem;
