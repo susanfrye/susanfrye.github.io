@@ -5,12 +5,12 @@ function goTo(url) {
 
 // ── Load SVG illustration and wire up interactions ───────────
 const interactions = {
-  'tree-research': { url: 'research.html',                              label: '🌳 Research' },
-  'tree-cv':       { url: 'cv.html',                                    label: '📋 CV' },
-  'tree-contact':  { url: 'contact.html',                               label: '✉️ Contact' },
-  'bee-right':     { url: 'https://susanmfrye.shinyapps.io/shiny_app/', label: '🐝 Data Explorer' },
-  'bee-left':      { url: 'https://susanmfrye.shinyapps.io/shiny_app/', label: '🐝 Data Explorer' },
-  'bee-center':    { url: 'https://susanmfrye.shinyapps.io/shiny_app/', label: '🐝 Data Explorer' },
+  'tree-research': { url: 'research.html',                              label: 'Research' },
+  'tree-cv':       { url: 'cv.html',                                    label: 'CV' },
+  'tree-contact':  { url: 'contact.html',                               label: 'Contact' },
+  'bee-right':     { url: 'https://susanmfrye.shinyapps.io/shiny_app/', label: 'Data Explorer' },
+  'bee-left':      { url: 'https://susanmfrye.shinyapps.io/shiny_app/', label: 'Data Explorer' },
+  'bee-center':    { url: 'https://susanmfrye.shinyapps.io/shiny_app/', label: 'Data Explorer' },
 };
 
 const tooltip  = document.getElementById('tooltip');
