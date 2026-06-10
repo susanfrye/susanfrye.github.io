@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "website",
-      "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "5500", "--directory", "/Users/susanfrye/Documents/Claude/Projects/Website_v2"],
+      "runtimeExecutable": "/Users/susanfrye/Documents/Claude/Projects/Website_v2/.claude/serve.sh",
+      "runtimeArgs": [],
       "port": 5500
     }
   ]
