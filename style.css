@@ -214,6 +214,71 @@ nav { display: flex; gap: 32px; }
   font-weight: 500;
 }
 
+/* ── Data Explorer ── */
+.explorer-section {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.explorer-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  color: #1b5e20;
+  margin-bottom: 8px;
+}
+
+.explorer-subtitle {
+  color: #888;
+  font-size: 1rem;
+  margin-bottom: 40px;
+}
+
+.explorer-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.explorer-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  background: #fff;
+  border: 1px solid #c8e6c9;
+  border-radius: 10px;
+  padding: 28px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.explorer-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.1);
+}
+
+.explorer-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: #1b5e20;
+  margin-bottom: 12px;
+}
+
+.explorer-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+@media (max-width: 700px) {
+  .explorer-cards { grid-template-columns: 1fr; }
+}
+
 /* ── Footer ── */
 footer {
   text-align: center;
