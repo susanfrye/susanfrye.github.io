@@ -6,7 +6,6 @@ function goTo(url) {
 // ── Load SVG illustration and wire up interactions ───────────
 const interactions = {
   'tree-research': { url: 'research.html',                              label: 'Research' },
-  'tree-cv':       { url: 'cv.html',                                    label: 'CV' },
   'tree-contact':  { url: 'contact.html',                               label: 'Contact' },
   'bee-right':     { url: 'data-explorer.html', label: 'Data Explorer' },
   'bee-left':      { url: 'data-explorer.html', label: 'Data Explorer' },
