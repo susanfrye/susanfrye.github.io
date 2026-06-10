@@ -284,7 +284,7 @@ nav { display: flex; gap: 8px; align-items: center; }
 .research-banner {
   padding-bottom: 20px;
   margin-bottom: 40px;
-  border-bottom: 3px solid #ffd54f;
+  border-bottom: 1px solid #fff3c4;
 }
 
 .research-banner .explorer-title {
