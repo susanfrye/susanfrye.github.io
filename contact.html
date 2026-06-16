@@ -31,38 +31,9 @@
     </div>
 
     <h1 class="contact-title">Get in Touch</h1>
-    <p class="contact-subtitle">Have a question, idea, or just want to say hi? Send a message below.</p>
+    <p class="contact-subtitle">I'd love to hear from you — whether it's a question, an idea, or a possible collaboration.</p>
 
-    <!--
-      NOTE FOR SUSAN:
-      Right now this form opens the visitor's email app with a
-      pre-filled message addressed to susanmafrye@gmail.com (see
-      the JS at the bottom of this file) — no server needed.
-
-      If you'd rather messages land directly in your inbox without
-      the visitor needing an email client open, sign up for a free
-      form-handling service like https://formspree.io, create a
-      form pointed at susanmafrye@gmail.com, and:
-        1. Change the <form> tag below to:
-             <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        2. Remove the onsubmit="..." attribute on the form.
-        3. Delete (or keep, harmless) the <script> at the bottom.
-    -->
-    <form class="contact-form" onsubmit="return sendViaEmail(event)">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required />
-
-      <label for="email">Your email</label>
-      <input type="email" id="email" name="email" required />
-
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="6" required></textarea>
-
-      <button type="submit" class="btn-green">Send message →</button>
-    </form>
-
-    <p class="contact-alt">
-      Prefer email directly? Reach me at
+    <p class="contact-email">
       <a href="mailto:susanmafrye@gmail.com">susanmafrye@gmail.com</a>
     </p>
   </section>
@@ -83,21 +54,6 @@
   </footer>
 
   <script src="ripple.js"></script>
-
-  <script>
-    function sendViaEmail(event) {
-      event.preventDefault();
-      const name    = document.getElementById('name').value;
-      const email   = document.getElementById('email').value;
-      const message = document.getElementById('message').value;
-
-      const subject = encodeURIComponent(`Website message from ${name}`);
-      const body    = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
-
-      window.location.href = `mailto:susanmafrye@gmail.com?subject=${subject}&body=${body}`;
-      return false;
-    }
-  </script>
 
 </body>
 </html>

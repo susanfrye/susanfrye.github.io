@@ -571,6 +571,25 @@ nav { display: flex; gap: 8px; align-items: center; }
   color: #888;
 }
 
+.contact-email {
+  margin-top: 12px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+}
+
+.contact-email a {
+  color: #2e7d32;
+  text-decoration: none;
+  border-bottom: 2px solid #c8e6c9;
+  padding-bottom: 3px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.contact-email a:hover {
+  color: #1b5e20;
+  border-color: #1b5e20;
+}
+
 /* ── About Page ── */
 .about-page-section {
   position: relative;
