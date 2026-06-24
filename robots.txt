@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://susanfrye.com/sitemap.xml
