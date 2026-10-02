@@ -12,6 +12,14 @@
   <!-- GA4: replace G-L9WN2S92QM with your real ID from analytics.google.com -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9WN2S92QM"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-L9WN2S92QM');</script>
+  <style>
+    .lightbox { margin: auto; border: none; padding: 0; max-width: 96vw; max-height: 94vh; background: #fff; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,.35); overflow: auto; }
+    .lightbox::backdrop { background: rgba(0,0,0,.75); }
+    .lightbox img { display: block; width: min(1800px, 94vw); height: auto; }
+    .lightbox-close { position: sticky; top: 8px; float: right; margin: 8px 8px -48px 0; width: 40px; height: 40px; border-radius: 50%; border: none; background: #1b5e20; color: #fff; font-size: 1.5rem; line-height: 1; cursor: pointer; z-index: 1; }
+    @media (max-width: 700px) { .lightbox img { width: 1000px; max-width: none; } }
+    .lightbox-close:focus-visible { outline: 3px solid #a5d6a7; }
+  </style>
 </head>
 <body>
 
@@ -47,7 +55,7 @@
 
       <div class="talk-card">
         <div class="talk-card-photo">
-          <img src="Ch3_scale_graphical_abstract.png" alt="Graphical abstract: scale-insect abundance by canopy position, internode age and branch growth in sugar maple" style="object-fit: contain; background: #fff;" onerror="this.parentElement.style.display='none'"/>
+          <img src="Ch3_scale_graphical_abstract.png" alt="Graphical abstract: scale-insect abundance by canopy position, internode age and branch growth in sugar maple" style="object-fit: contain; background: #fff; cursor: zoom-in;" class="zoomable" tabindex="0" role="button" title="Click to enlarge" onerror="this.parentElement.style.display='none'"/>
         </div>
         <div class="talk-card-body">
           <h3>Canopy Position, Tree Size &amp; Honeydew-Producing Scale Insects</h3>
@@ -89,6 +97,22 @@
     <p>© 2026 Susan Frye</p>
   </footer>
 
+  <dialog class="lightbox" id="lightbox" aria-label="Enlarged image">
+    <button class="lightbox-close" aria-label="Close enlarged image">&times;</button>
+    <img alt=""/>
+  </dialog>
+  <script>
+    (function () {
+      var box = document.getElementById('lightbox'), big = box.querySelector('img');
+      function open(img) { big.src = img.src; big.alt = img.alt; box.showModal(); }
+      document.querySelectorAll('.zoomable').forEach(function (img) {
+        img.addEventListener('click', function () { open(img); });
+        img.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(img); } });
+      });
+      box.querySelector('.lightbox-close').addEventListener('click', function () { box.close(); });
+      box.addEventListener('click', function (e) { if (e.target === box) box.close(); });
+    })();
+  </script>
   <script src="ripple.js"></script>
 
 </body>
